@@ -39,7 +39,7 @@ export default function MainContent() {
           <div className="flex items-center gap-4 mb-5 mt-4">
             <span className="text-primary font-semibold text-sm">Eduardo Martínez López</span>
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
-              <span>📅</span> Last updated: 12.03.2026
+              <span>📅</span> Last updated: 02.04.2026
             </span>
           </div>
 
