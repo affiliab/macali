@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@layer base {
+  :root {
+    --background: 155 35% 6%;
+    --foreground: 60 20% 92%;
+
+    --card: 155 25% 10%;
+    --card-foreground: 60 20% 92%;
+
+    --popover: 155 25% 10%;
+    --popover-foreground: 60 20% 92%;
+
+    --primary: 145 72% 45%;
+    --primary-foreground: 155 35% 6%;
+
+    --secondary: 155 20% 15%;
+    --secondary-foreground: 60 20% 92%;
+
+    --muted: 155 15% 18%;
+    --muted-foreground: 150 12% 58%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 155 35% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 20% 92%;
+
+    --border: 155 18% 18%;
+    --input: 155 18% 20%;
+    --ring: 145 72% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 155 25% 8%;
+    --sidebar-foreground: 60 20% 92%;
+    --sidebar-primary: 145 72% 45%;
+    --sidebar-primary-foreground: 155 35% 6%;
+    --sidebar-accent: 155 20% 14%;
+    --sidebar-accent-foreground: 60 20% 92%;
+    --sidebar-border: 155 18% 16%;
+    --sidebar-ring: 145 72% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(155 35% 6%) 0%, hsl(155 30% 12%) 50%, hsl(155 35% 6%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(155 25% 12%) 0%, hsl(155 25% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(145 72% 45%) 0%, hsl(160 65% 38%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 90% 55%) 100%);
+    --shadow-glow: 0 0 30px hsl(145 72% 45% / 0.15);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .casino-gradient-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-gradient-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-casino {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius);
+  }
+
+  .glow-border {
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+
+  .rating-star {
+    color: hsl(var(--accent));
+  }
+
+  .badge-casino {
+    background: hsl(var(--primary) / 0.15);
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .table-casino {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .table-casino th {
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  .table-casino td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .table-casino tr:hover td {
+    background: hsl(var(--muted) / 0.5);
+  }
+
+  .faq-item {
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .breadcrumb-link {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb-link:hover {
+    color: hsl(var(--primary));
+  }
+
+  .toc-link {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    padding: 0.35rem 0;
+    display: block;
+    border-left: 2px solid transparent;
+    padding-left: 0.75rem;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+  }
+
+  .toc-link:hover {
+    color: hsl(var(--primary));
+    border-left-color: hsl(var(--primary));
+  }
+
+  .good-example {
+    background: hsl(145 50% 20% / 0.2);
+    border-left: 4px solid hsl(var(--primary));
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 0.75rem 0;
+  }
+
+  .bad-example {
+    background: hsl(0 50% 20% / 0.2);
+    border-left: 4px solid hsl(var(--destructive));
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 0.75rem 0;
+  }
+}
