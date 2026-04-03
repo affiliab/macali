@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.casinosindni.eu.com/sitemap.xml
+Sitemap: https://macali.es/sitemap.xml
